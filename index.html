@@ -7,43 +7,64 @@
 body {
   margin: 0;
   font-family: Arial;
-  background: #020617;
   color: white;
+
+  /* 🔥 COOL BACKGROUND */
+  background: radial-gradient(circle at top, #0f172a 0%, #020617 70%),
+              linear-gradient(135deg, rgba(59,130,246,0.1), rgba(168,85,247,0.1));
+  background-attachment: fixed;
 }
 
+/* NAVBAR */
 .nav {
   text-align: center;
   padding: 15px;
   font-size: 22px;
   font-weight: bold;
   border-bottom: 1px solid #1e293b;
+  background: rgba(2,6,23,0.9);
+  backdrop-filter: blur(6px);
 }
 
+/* TABLE CONTAINER */
 .container {
-  padding: 10px;
-  overflow-x: auto;
+  padding: 15px;
 }
 
+/* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
+  background: rgba(2, 6, 23, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
+/* HEADERS */
 th {
-  padding: 10px;
+  padding: 12px;
   color: #94a3b8;
-  text-transform: uppercase;
   font-size: 12px;
+  background: rgba(15,23,42,0.9);
 }
 
+/* CELLS */
 td {
-  padding: 10px;
+  padding: 12px;
   border-bottom: 1px solid #1e293b;
   text-align: center;
 }
 
-td[contenteditable="true"] {
+/* HOVER EFFECT */
+tr:hover {
   background: rgba(255,255,255,0.05);
+  transition: 0.2s;
+}
+
+/* EDITABLE */
+td[contenteditable="true"] {
+  background: rgba(255,255,255,0.03);
 }
 
 /* COLORS */
@@ -55,16 +76,77 @@ td[contenteditable="true"] {
 .lt { color: #4ade80; font-weight: bold; }
 .ft { color: #f87171; font-weight: bold; }
 
+/* BUTTONS */
 button {
   margin: 10px;
   padding: 8px 12px;
   background: #1e293b;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
+button:hover {
+  background: #334155;
+}
 </style>
+
+  
+
+  
+  
+
+
+
+
+
+  
+  
+  
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+
+  
+  
+  
+  
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+
+
 </head>
 
 <body>
