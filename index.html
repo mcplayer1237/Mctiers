@@ -1,225 +1,136 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>MC Tiers Clone</title>
+<title>MC Tiers Pro</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial;
   color: white;
-
-  /* 🔥 COOL BACKGROUND */
-  background: radial-gradient(circle at top, #0f172a 0%, #020617 70%),
-              linear-gradient(135deg, rgba(59,130,246,0.1), rgba(168,85,247,0.1));
-  background-attachment: fixed;
+  background: radial-gradient(circle at top, #0f172a, #020617);
 }
 
-/* NAVBAR */
+/* NAV */
 .nav {
   text-align: center;
   padding: 15px;
   font-size: 22px;
   font-weight: bold;
   border-bottom: 1px solid #1e293b;
-  background: rgba(2,6,23,0.9);
-  backdrop-filter: blur(6px);
-}
-
-/* TABLE CONTAINER */
-.container {
-  padding: 15px;
 }
 
 /* TABLE */
 table {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(2, 6, 23, 0.85);
-  backdrop-filter: blur(10px);
-  border-radius: 10px;
-  overflow: hidden;
 }
 
-/* HEADERS */
 th {
-  padding: 12px;
+  padding: 10px;
   color: #94a3b8;
   font-size: 12px;
-  background: rgba(15,23,42,0.9);
 }
 
-/* CELLS */
 td {
-  padding: 12px;
+  padding: 10px;
   border-bottom: 1px solid #1e293b;
   text-align: center;
 }
 
-/* HOVER EFFECT */
+/* HOVER */
 tr:hover {
-  background: rgba(255,255,255,0.05);
-  transition: 0.2s;
+  box-shadow: 0 0 10px rgba(59,130,246,0.3);
 }
+
+/* PLAYER */
+.player-name {
+  font-weight: bold;
+}
+
+/* TITLES */
+.title {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 4px;
+  font-weight: bold;
+}
+
+.specialist { color: #facc15; background: rgba(250,204,21,0.2); }
+.ace { color: #3b82f6; background: rgba(59,130,246,0.2); }
+.master { color: #ef4444; background: rgba(239,68,68,0.2); }
+.god { color: #a855f7; background: rgba(168,85,247,0.2); }
 
 /* EDITABLE */
 td[contenteditable="true"] {
-  background: rgba(255,255,255,0.03);
-}
-
-/* COLORS */
-.rank { color: gold; font-weight: bold; }
-.player { font-weight: bold; }
-
-.ht { color: #c084fc; font-weight: bold; }
-.mt { color: #38bdf8; font-weight: bold; }
-.lt { color: #4ade80; font-weight: bold; }
-.ft { color: #f87171; font-weight: bold; }
-
-/* BUTTONS */
-button {
-  margin: 10px;
-  padding: 8px 12px;
-  background: #1e293b;
-  color: white;
-  border: none;
-  border-radius: 6px;
-}
-
-button:hover {
-  background: #334155;
+  background: rgba(255,255,255,0.05);
 }
 </style>
-
-  
-
-  
-  
-
-
-
-
-
-  
-  
-  
-
-
-
-  
-  
-
-
-
-  
-  
-
-
-
-  
-  
-  
-  
-
-
-
-
-  
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-
-
-
 </head>
 
 <body>
 
 <div class="nav">⚔️ MC Global Rankings</div>
 
-<div class="container">
-
-<button onclick="saveData()">💾 Save</button>
-<button onclick="loadData()">📂 Load</button>
-
-<table id="table">
+<table>
 
 <tr>
 <th>#</th>
 <th>Player</th>
-<th>Crystal</th>
-<th>Sword</th>
-<th>Axe</th>
-<th>UHC</th>
-<th>NethPot</th>
-<th>DiaPot</th>
-<th>SMP</th>
-<th>Overall</th>
+
+<th>Crystal</th><th>Pts</th>
+<th>Sword</th><th>Pts</th>
+<th>Axe</th><th>Pts</th>
+<th>UHC</th><th>Pts</th>
+<th>NethPot</th><th>Pts</th>
+<th>DiaPot</th><th>Pts</th>
+<th>SMP</th><th>Pts</th>
+
+<th>Total</th>
 </tr>
 
 <tr>
-<td contenteditable="true">1</td>
-<td contenteditable="true">Click</td>
-<td contenteditable="true">HT1</td>
-<td contenteditable="true">MT2</td>
-<td contenteditable="true">LT1</td>
-<td contenteditable="true">HT3</td>
-<td contenteditable="true">MT1</td>
-<td contenteditable="true">LT2</td>
-<td contenteditable="true">MT2</td>
-<td contenteditable="true">HT1</td>
+<td>1</td>
+<td>
+<div class="player-name">Player1</div>
+<div class="title ace">⚔️ Combat Ace</div>
+</td>
+
+<td>HT1</td><td contenteditable="true">100</td>
+<td>MT2</td><td contenteditable="true">80</td>
+<td>LT1</td><td contenteditable="true">60</td>
+<td>HT3</td><td contenteditable="true">90</td>
+<td>MT1</td><td contenteditable="true">85</td>
+<td>LT2</td><td contenteditable="true">70</td>
+<td>MT2</td><td contenteditable="true">80</td>
+
+<td contenteditable="true"><b>565</b></td>
 </tr>
 
 <tr>
-<td contenteditable="true">2</td>
-<td contenteditable="true">Click</td>
-<td contenteditable="true">HT2</td>
-<td contenteditable="true">HT4</td>
-<td contenteditable="true">MT2</td>
-<td contenteditable="true">LT3</td>
-<td contenteditable="true">MT2</td>
-<td contenteditable="true">MT3</td>
-<td contenteditable="true">LT1</td>
-<td contenteditable="true">HT2</td>
+<td>2</td>
+<td>
+<div class="player-name">Player2</div>
+<div class="title master">🔥 Combat Master</div>
+</td>
+
+<td>HT2</td><td contenteditable="true">95</td>
+<td>HT4</td><td contenteditable="true">70</td>
+<td>MT2</td><td contenteditable="true">80</td>
+<td>LT3</td><td contenteditable="true">50</td>
+<td>MT2</td><td contenteditable="true">80</td>
+<td>MT3</td><td contenteditable="true">75</td>
+<td>LT1</td><td contenteditable="true">60</td>
+
+<td contenteditable="true"><b>510</b></td>
 </tr>
 
-<!-- COPY THIS ROW TO ADD MORE PLAYERS UP TO 15 -->
+<!-- COPY ROW ABOVE TO ADD MORE PLAYERS -->
 
 </table>
 
-</div>
-
-<script>
-function saveData() {
-  localStorage.setItem("tableData", document.getElementById("table").innerHTML);
-  alert("Saved!");
-}
-
-function loadData() {
-  let data = localStorage.getItem("tableData");
-  if(data) {
-    document.getElementById("table").innerHTML = data;
-  }
-}
-
-window.onload = loadData;
-</script>
-
 </body>
-</html>
+  </html>
+
